@@ -1,7 +1,7 @@
 // IAshmemMMKV.aidl
-package com.tencent.mmkvdemo;
+package com.onyx.internal.mmkvdemo;
 
-import com.tencent.mmkv.ParcelableMMKV;
+import com.onyx.internal.mmkv.ParcelableMMKV;
 
 interface IAshmemMMKV {
     ParcelableMMKV GetAshmemMMKV();

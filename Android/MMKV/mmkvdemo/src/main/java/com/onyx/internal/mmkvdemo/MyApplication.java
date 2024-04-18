@@ -1,13 +1,13 @@
-package com.tencent.mmkvdemo;
+package com.onyx.internal.mmkvdemo;
 
 import android.app.Application;
 import android.util.Log;
 import com.getkeepsafe.relinker.ReLinker;
-import com.tencent.mmkv.MMKV;
-import com.tencent.mmkv.MMKVContentChangeNotification;
-import com.tencent.mmkv.MMKVHandler;
-import com.tencent.mmkv.MMKVLogLevel;
-import com.tencent.mmkv.MMKVRecoverStrategic;
+import com.onyx.internal.mmkv.MMKV;
+import com.onyx.internal.mmkv.MMKVContentChangeNotification;
+import com.onyx.internal.mmkv.MMKVHandler;
+import com.onyx.internal.mmkv.MMKVLogLevel;
+import com.onyx.internal.mmkv.MMKVRecoverStrategic;
 
 public class MyApplication extends Application implements MMKVHandler, MMKVContentChangeNotification {
     @Override

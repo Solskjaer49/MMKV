@@ -18,7 +18,7 @@
  * limitations under the License.
  */
 
-package com.tencent.mmkvdemo;
+package com.onyx.internal.mmkvdemo;
 
 import android.app.Service;
 import android.content.Intent;
@@ -26,8 +26,8 @@ import android.content.SharedPreferences;
 import android.os.IBinder;
 import android.util.Log;
 import androidx.annotation.Nullable;
-import com.tencent.mmkv.MMKV;
-import com.tencent.mmkv.ParcelableMMKV;
+import com.onyx.internal.mmkv.MMKV;
+import com.onyx.internal.mmkv.ParcelableMMKV;
 import java.util.Random;
 
 public abstract class BenchMarkBaseService extends Service {

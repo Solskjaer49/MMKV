@@ -18,7 +18,7 @@
  * limitations under the License.
  */
 
-package com.tencent.mmkvdemo;
+package com.onyx.internal.mmkvdemo;
 
 import android.content.ContentValues;
 import android.content.Context;

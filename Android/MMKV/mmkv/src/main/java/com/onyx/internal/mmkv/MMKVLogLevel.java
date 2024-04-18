@@ -1,4 +1,4 @@
-package com.tencent.mmkv;
+package com.onyx.internal.mmkv;
 
 /**
  * The levels of MMKV log.

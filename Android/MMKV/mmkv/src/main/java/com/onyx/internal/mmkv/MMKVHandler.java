@@ -18,7 +18,7 @@
  * limitations under the License.
  */
 
-package com.tencent.mmkv;
+package com.onyx.internal.mmkv;
 
 /**
  * Callback handler for MMKV.

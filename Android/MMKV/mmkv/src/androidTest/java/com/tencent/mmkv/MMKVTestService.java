@@ -18,7 +18,7 @@
  * limitations under the License.
  */
 
-package com.tencent.mmkv;
+package com.onyx.internal.mmkv;
 
 import android.app.Service;
 import android.content.Intent;

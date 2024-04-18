@@ -18,14 +18,14 @@
  * limitations under the License.
  */
 
-package com.tencent.mmkvdemo;
+package com.onyx.internal.mmkvdemo;
 
 import static android.content.Context.MODE_PRIVATE;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.util.Log;
-import com.tencent.mmkv.MMKV;
+import com.onyx.internal.mmkv.MMKV;
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;

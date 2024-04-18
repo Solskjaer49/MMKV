@@ -1,4 +1,4 @@
-package com.tencent.mmkvdemo;
+package com.onyx.internal.mmkvdemo;
 
 import android.os.Parcel;
 import android.os.Parcelable;

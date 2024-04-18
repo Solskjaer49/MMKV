@@ -20,7 +20,6 @@
 
 #include "MMKVPredef.h"
 
-#ifdef MMKV_ANDROID
 
 #    include "MMBuffer.h"
 #    include "MMKV.h"
@@ -65,7 +64,8 @@ extern "C" JNIEXPORT JNICALL jint JNI_OnLoad(JavaVM *vm, void *reserved) {
     if (g_cls) {
         env->DeleteGlobalRef(g_cls);
     }
-    static const char *clsName = "com/tencent/mmkv/MMKV";
+    MMKVError("start JNI_OnLoad");
+    static const char *clsName = "com/onyx/internal/mmkv/MMKV";
     jclass instance = env->FindClass(clsName);
     if (!instance) {
         MMKVError("fail to locate class: %s", clsName);
@@ -1161,4 +1161,3 @@ static int registerNativeMethods(JNIEnv *env, jclass cls) {
     return env->RegisterNatives(cls, g_methods, sizeof(g_methods) / sizeof(g_methods[0]));
 }
 
-#endif // MMKV_ANDROID

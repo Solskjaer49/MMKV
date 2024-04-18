@@ -18,7 +18,7 @@
  * limitations under the License.
  */
 
-package com.tencent.mmkv;
+package com.onyx.internal.mmkv;
 
 import android.content.ContentResolver;
 import android.content.Context;
@@ -146,6 +146,20 @@ public class MMKV implements SharedPreferences, SharedPreferences.Editor {
     }
 
     /**
+     * Initialize MMKV with customize root folder.
+     * You must call one of the initialize() methods on App startup process before using MMKV.
+     *
+     * @param context The context of Android App, usually from Application.
+     * @param rootDir The root folder of MMKV, defaults to $(FilesDir)/mmkv.
+     * @param cacheDir The root folder of MMKV, defaults to $(FilesDir)/mmkv.
+     * @return The root folder of MMKV.
+     */
+    public static String initialize(Context context, String rootDir, String cacheDir) {
+        MMKVLogLevel logLevel = BuildConfig.DEBUG ? MMKVLogLevel.LevelDebug : MMKVLogLevel.LevelInfo;
+        return initialize(context, rootDir, cacheDir, null, logLevel, null);
+    }
+
+    /**
      * Initialize MMKV with customize root folder, and log level.
      * You must call one of the initialize() methods on App startup process before using MMKV.
      *
@@ -187,6 +201,10 @@ public class MMKV implements SharedPreferences, SharedPreferences.Editor {
     }
 
     public static String initialize(Context context, String rootDir, LibLoader loader, MMKVLogLevel logLevel, MMKVHandler handler) {
+        return initialize(context, rootDir, context.getCacheDir().getAbsolutePath(), loader, logLevel, handler);
+    }
+
+    public static String initialize(Context context, String rootDir, String cacheDir, LibLoader loader, MMKVLogLevel logLevel, MMKVHandler handler) {
         // disable process mode in release build
         // FIXME: Find a better way to getApplicationInfo() without using context.
         //  If any one knows how, you're welcome to make a contribution.
@@ -195,7 +213,6 @@ public class MMKV implements SharedPreferences, SharedPreferences.Editor {
         } else {
             enableProcessModeChecker();
         }
-        String cacheDir = context.getCacheDir().getAbsolutePath();
 
         gCallbackHandler = handler;
         if (gCallbackHandler != null && gCallbackHandler.wantLogRedirecting()) {

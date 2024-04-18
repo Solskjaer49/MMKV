@@ -18,7 +18,7 @@
  * limitations under the License.
  */
 
-package com.tencent.mmkvdemo;
+package com.onyx.internal.mmkvdemo;
 
 import android.content.ComponentName;
 import android.content.Intent;
@@ -26,7 +26,7 @@ import android.content.ServiceConnection;
 import android.os.IBinder;
 import android.os.RemoteException;
 import android.util.Log;
-import com.tencent.mmkv.ParcelableMMKV;
+import com.onyx.internal.mmkv.ParcelableMMKV;
 
 public class MyService_1 extends BenchMarkBaseService implements ServiceConnection {
     public static final String CMD_PREPARE_ASHMEM = "cmd_prepare_ashmem";
@@ -48,7 +48,7 @@ public class MyService_1 extends BenchMarkBaseService implements ServiceConnecti
                 } else if (cmd.equals(CMD_WRITE_STRING)) {
                     super.batchWriteString(CALLER);
                 } else if (cmd.equals(CMD_PREPARE_ASHMEM)) {
-                    Intent i = new Intent("com.tencent.mmkvdemo.MyService").setPackage("com.tencent.mmkvdemo");
+                    Intent i = new Intent("com.onyx.internal.mmkvdemo.MyService").setPackage("com.onyx.internal.mmkvdemo");
                     bindService(i, this, BIND_AUTO_CREATE);
                 } else if (cmd.equals(CMD_PREPARE_ASHMEM_BY_CP)) {
                     super.prepareAshmemMMKVByCP();

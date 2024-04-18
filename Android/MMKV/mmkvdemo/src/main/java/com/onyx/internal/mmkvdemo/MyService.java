@@ -18,11 +18,11 @@
  * limitations under the License.
  */
 
-package com.tencent.mmkvdemo;
+package com.onyx.internal.mmkvdemo;
 
 import android.content.Intent;
 import android.util.Log;
-import com.tencent.mmkv.MMKV;
+import com.onyx.internal.mmkv.MMKV;
 
 public class MyService extends BenchMarkBaseService {
     private static final String CALLER = "MyService";

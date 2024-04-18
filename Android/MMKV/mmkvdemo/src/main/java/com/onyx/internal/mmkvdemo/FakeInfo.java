@@ -1,38 +1,36 @@
-package com.tencent.mmkvdemo;
+package com.onyx.internal.mmkvdemo;
 
 import android.os.Parcel;
 import android.os.Parcelable;
 import androidx.annotation.NonNull;
 
-class Info implements Parcelable {
+public class FakeInfo implements Parcelable {
     public String channelId;
 
     public int position;
-    public Info(String id, int pos) {
-        channelId = id;
-        position = pos;
+    public FakeInfo() {
     }
 
     @NonNull
     @Override
     public String toString() {
-        return "channelID = " + channelId + ", position = " + position;
+        return "fake channelID = " + channelId + ", position = " + position;
     }
 
-    protected Info(Parcel in) {
+    protected FakeInfo(Parcel in) {
         channelId = in.readString();
         position = in.readInt();
     }
 
-    public static final Creator<Info> CREATOR = new Creator<Info>() {
+    public static final Creator<FakeInfo> CREATOR = new Creator<FakeInfo>() {
         @Override
-        public Info createFromParcel(Parcel in) {
-            return new Info(in);
+        public FakeInfo createFromParcel(Parcel in) {
+            return new FakeInfo(in);
         }
 
         @Override
-        public Info[] newArray(int size) {
-            return new Info[size];
+        public FakeInfo[] newArray(int size) {
+            return new FakeInfo[size];
         }
     };
 

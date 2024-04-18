@@ -1,4 +1,4 @@
-package com.tencent.mmkvdemo;
+package com.onyx.internal.mmkvdemo;
 
 import android.content.BroadcastReceiver;
 import android.content.ContentProvider;

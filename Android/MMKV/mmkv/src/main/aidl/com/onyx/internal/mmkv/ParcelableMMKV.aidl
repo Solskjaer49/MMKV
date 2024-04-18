@@ -1,4 +1,4 @@
 // MMKV.aidl
-package com.tencent.mmkv;
+package com.onyx.internal.mmkv;
 
 parcelable ParcelableMMKV;

@@ -1,4 +1,4 @@
-package com.tencent.mmkv;
+package com.onyx.internal.mmkv;
 
 /**
  * A native memory wrapper, whose underlying memory can be passed to another JNI method directly.

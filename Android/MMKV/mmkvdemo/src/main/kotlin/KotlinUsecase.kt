@@ -18,9 +18,9 @@
  * limitations under the License.
  */
 
-package com.tencent.mmkvdemo
+package com.onyx.internal.mmkvdemo
 
-import com.tencent.mmkv.MMKV
+import com.onyx.internal.mmkv.MMKV
 import java.util.*
 
 fun kotlinFunctionalTest() {

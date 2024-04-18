@@ -18,7 +18,7 @@
  * limitations under the License.
  */
 
-package com.tencent.mmkv;
+package com.onyx.internal.mmkv;
 
 /**
  * The recover strategic of MMKV on errors. {@link MMKV#registerHandler}

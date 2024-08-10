@@ -13,7 +13,7 @@ cmake_minimum_required(VERSION 3.10.0)
 
 add_subdirectory(../../../Core Core)
 
-add_library( mmkv
+add_library( mmkv-onyx
 
              # Sets the library as a shared library.
              SHARED
@@ -23,7 +23,7 @@ add_library( mmkv
              src/main/cpp/flutter-bridge.cpp
         )
 
-set_target_properties(mmkv PROPERTIES
+set_target_properties(mmkv-onyx PROPERTIES
         CXX_STANDARD 17
         CXX_EXTENSIONS OFF
         POSITION_INDEPENDENT_CODE ON
@@ -46,7 +46,7 @@ find_library( # Sets the name of the path variable.
 # can link multiple libraries, such as libraries you define in this
 # build script, prebuilt third-party libraries, or system libraries.
 
-target_link_libraries( mmkv
+target_link_libraries( mmkv-onyx
 
                        # Links the target library to the log library
                        # included in the NDK.

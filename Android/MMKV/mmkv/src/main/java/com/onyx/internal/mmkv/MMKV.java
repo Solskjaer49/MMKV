@@ -208,7 +208,8 @@ public class MMKV implements SharedPreferences, SharedPreferences.Editor {
         // disable process mode in release build
         // FIXME: Find a better way to getApplicationInfo() without using context.
         //  If any one knows how, you're welcome to make a contribution.
-        if ((context.getApplicationInfo().flags & ApplicationInfo.FLAG_DEBUGGABLE) == 0) {
+        if ((context != null)
+                && (context.getApplicationInfo().flags & ApplicationInfo.FLAG_DEBUGGABLE) == 0) {
             disableProcessModeChecker();
         } else {
             enableProcessModeChecker();
@@ -232,12 +233,12 @@ public class MMKV implements SharedPreferences, SharedPreferences.Editor {
             if (BuildConfig.FLAVOR.equals("SharedCpp")) {
                 loader.loadLibrary("c++_shared");
             }
-            loader.loadLibrary("mmkv");
+            loader.loadLibrary("mmkv-onyx");
         } else {
             if (BuildConfig.FLAVOR.equals("SharedCpp")) {
                 System.loadLibrary("c++_shared");
             }
-            System.loadLibrary("mmkv");
+            System.loadLibrary("mmkv-onyx");
         }
         jniInitialize(rootDir, cacheDir, logLevel2Int(logLevel), wantLogReDirecting);
         MMKV.rootDir = rootDir;
